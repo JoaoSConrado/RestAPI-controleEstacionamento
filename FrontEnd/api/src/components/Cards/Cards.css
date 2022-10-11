@@ -1,0 +1,12 @@
+.mainCard {
+    display: inline-block;
+  
+}
+
+.cards {
+    padding: 50px;
+    margin: 30px;
+    background-color: aqua;
+    border-radius: 50px;
+    justify-content: space-around;
+}

@@ -16,12 +16,9 @@ function HeaderMain() {
                     <img className='logo' src={LogoMagna} />
                 </div>
 
-                <div >
-                    
-                    <Link to="/post">
-                        <button className='botaoPost'> ADD NEW POST </button>
-                    </Link>
-
+                <div className='botoes-header-cta'>
+                    <button className='button-header1'> Login </button>
+                    <button className='button-header2'> Cadastre-se </button>
                 </div>
             </div>
 
