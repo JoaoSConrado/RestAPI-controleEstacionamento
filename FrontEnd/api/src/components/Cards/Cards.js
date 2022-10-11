@@ -1,6 +1,11 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, {useState, useEffect} from 'react';
 
+import {
+    FaTrash, FaRegEdit
+  } from "react-icons/fa";
+  
+
 import More from '../../images/more.svg'
 import { Link } from 'react-router-dom';
 import axios from 'axios'
@@ -30,42 +35,142 @@ function Cards() {
     }
     
     return (
-        <>  
-            {posts.map((post, key) => {
 
-                return (
-                    <section className='mainCard'>
-                        <section className='cards' key={key}>
-                            <div className='card' >
+        <>
+            <div>
+                <h1>PROJETO REST API COM SPRING BOOT</h1>
+                <p>Esse projeto é basicamente a construção de uma Rest API, utilizando o Framework Spring Boot! 
+                    A API está sendo consumida no Front-End com AXIOS utilizando React.js. A aplicação está 
+                    realizando um CRUD e está conectada a um banco de dados relacional(PostgreSQL)!
+                </p>
+                <p>  </p>
 
-                                <h2>REGISTRO N°: {post.id} </h2>
-                                <p>{post.numeroVagaEstacionamento}</p>
-                                <p>{post.placaCarro}</p>
-                                <p>{post.marcaCarro}</p>
-                                <p>{post.modeloCarro}</p>
-                                <p>{post.corCarro}</p>
-                                <p>{post.nomeResponsavel}</p>
-                                <p>{post.apartamento}</p>
-                                <p>{post.bloco}</p>
-                                <p>{post.modeloCarro}</p>
+                <p> O objetivo é que o cliente possa ter um controle sobre a demanda de seus softwares, 
+                    Nessa tabela é possivel visualizar, editar e excluir! </p>
+            </div>
+            
 
-                                <div className='btns'>
-                                    <div className='btn-edit'>
-                                        <Link to={{ pathname: `/edit/${post.id}` }}>
-                                            <button>Edit</button>
-                                            </Link>
+            <div className='card'>  
+                <div className='cardTabelaEspecificações'>
+                    <ul className='registroCardEspecificaçõesCarro'>
+                        <li>INFORMAÇÕES DO CARRRO</li>                                    
+                    </ul>
+
+                    <ul className='registroCardEspecificaçõesResponsável'>
+                        <li>INFORMAÇÕES DO RESPONSÁVEL</li>                                    
+                    </ul>
+                </div>
+
+                <div className='cardTabela'>
+
+                    <ul className='registroCard'>
+                        <li>N° DA VAGA</li>                                  
+                    </ul>
+
+                    <ul className='registroCard'>
+                        <li>PLACA</li>                                
+                    </ul>
+
+                    <ul className='registroCard'>
+                        <li>MARCA</li>                                    
+                    </ul>
+
+                    <ul className='registroCard'>
+                        <li>MODELO</li>                                  
+                    </ul>
+
+                    <ul className='registroCard'>
+                        <li>COR</li>                                
+                    </ul>
+                
+
+                    <ul className='registroCard'>
+                        <li>NOME</li>                                
+                    </ul>
+
+                    <ul className='registroCard'>
+                        <li>APARTAMENTO</li>                                    
+                    </ul>
+
+                    <ul className='registroCard'>
+                        <li>BLOCO</li>                                  
+                    </ul>
+
+                    <ul className='registroCardEditDelete'>
+                        <li> </li>                                
+                    </ul>
+                    
+
+                </div>
+
+                {posts.map((post, key) => {
+
+                    return (
+                        <section className='mainCard'>
+                            <section className='cards' key={key}>
+                                <div className='card' >
+                                    <div className='linhaCard'>
+
+                                        <ul className='registroCardLinha'>
+                                            <li>{post.numeroVagaEstacionamento}</li>
+                                        </ul>
+
+                                        <ul className='registroCardLinha'>
+                                            <li>{post.placaCarro}</li>
+                                        </ul>
+
+                                        <ul className='registroCardLinha'>
+                                            <li>{post.marcaCarro}</li>
+                                        </ul>
+
+                                        <ul className='registroCardLinha'>
+                                            <li>{post.modeloCarro}</li>
+                                        </ul>
+
+                                        <ul className='registroCardLinha'>
+                                            <li>{post.corCarro}</li>
+                                        </ul>
+
+                                        <ul className='registroCardLinha'>
+                                            <li>{post.nomeResponsavel}</li>
+                                        </ul>
+
+                                        <ul className='registroCardLinha'>
+                                            <li>{post.apartamento}</li>
+                                        </ul>
+
+                                        <ul className='registroCardLinha'>
+                                            <li>{post.bloco}</li>
+                                        </ul>
+
+                                        <ul className='registroCardLinha'>
+                                        <div className='btns'>
+                                                <div className='btn-edit'>
+                                                    <Link to={{ pathname: `/edit/${post.id}` }}>
+                                                        <FaRegEdit />
+                                                    </Link>
+                                                </div>
+
+                                                <div className='btn-delete'>
+                                                    <FaTrash onClick={() => deletePost(post.id) }></FaTrash>                               
+                                                </div>
+                                            </div>
+                                        </ul>
+
                                     </div>
 
-                                    <div className='btn-delete'>
-                                        <button onClick={() => deletePost(post.id) }>Delete</button>                               
-                                    </div>
-                                </div>
-                            </div> 
+                                    
+                                </div> 
+                            </section>
                         </section>
-                    </section>
-                )
+                    )
 
-            })}
+                })}
+            </div>
+
+            <div>
+                <p> Caso queira visualizar o código fonte, clique: <a href='https://github.com/JoaoSConrado/RestAPI-controleEstacionamento' target="_blank">RestAPI</a></p>
+            </div>
         </>
     )
 
