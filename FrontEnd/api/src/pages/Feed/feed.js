@@ -5,7 +5,8 @@ import HeaderMain from '../../components/HeaderMain/HeaderMain';
 import Cards from '../../components/Cards/Cards';
 import Cta from '../../components/CTA/Cta.js';
 import { SlideComentarios } from '../../components/Slides/SlideComentarios';
-import { FraseLandingPage } from '../../components/Frases/Frases';
+import { FraseLandingPageMissao, FraseLandingPageVisao } from '../../components/Frases/Frases';
+import Localidade from '../../components/Localidades/Localidade';
 
 function Feed() {
 
@@ -14,8 +15,10 @@ function Feed() {
                 <HeaderMain />
                 <Cta />
                 <SlideComentarios />
-                <FraseLandingPage/>
+                <FraseLandingPageMissao/>
                 <Cards />
+                <FraseLandingPageVisao/>
+                <Localidade />
             </div>
     )
 }
